@@ -37,24 +37,35 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            // sourceMap: true
+                            sourceMap: true
                         }
                     },
+                    
+                    // {
+                    //     loader: 'postcss-loader',
+                    //     options: {
+                    //         ident: 'postcss',
+                    //         // url: false,
+                    //         plugins: [
+                    //             require('autoprefixer')({
+                    //                 // cascade: false
+                    //             })
+                    //         ]
+                    //     }
+                    // },
+
                     {
-                        loader: 'postcss-loader',
+                        loader: 'resolve-url-loader',
                         options: {
-                            ident: 'postcss',
-                            plugins: [
-                                require('autoprefixer')({
-                                    // cascade: false
-                                })
-                            ]
+                            engine: 'rework'
                         }
                     },
+
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: true
+                            sourceMap: true,
+                            sourceMapContents: false
                         }
                     }
                 ]
